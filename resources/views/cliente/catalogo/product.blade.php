@@ -143,11 +143,11 @@
                         </ul>
 
                         <ul class="product-links">
-                            <li>Share:</li>
-                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                            <li><a href="#"><i class="fa fa-envelope"></i></a></li>
+                            <li>Socialmedia:</li>
+                            <li><a href="{{url('https://www.facebook.com/farmaciaschavezsa/?locale=es_LA')}}"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="{{url('https://www.instagram.com/farmaciaschavez/?hl=es')}}"><i class="fa fa-instagram"></i></a></li>
+                            <li><a href="{{url('https://www.linkedin.com/company/farmaciaschavez/?originalSubdomain=bo')}}"><i class="fa fa-linkedin"></i></a></li>
+                            <li><a href="{{url('https://twitter.com/farmaciaschavez?lang=es')}}"><i class="fa fa-twitter"></i></a></li>
                         </ul>
 
                     </div>
@@ -182,41 +182,41 @@
                             <div id="tab1" class="tab-pane active">
                                 <div class="products-slick" data-nav="#slick-nav-1">
                                     <?php $a = 0; ?>
-                                    @foreach ($productosRec as $producto)
+                                    @foreach ($productosRec as $productoR)
                                         <?php $a = $a + 1; ?>
                                         <!-- product -->
                                         <div class="product">
                                             <div class="product-img">
-                                                <img src="{{ asset('public/img/' . $producto->imagen) }}" alt="">
+                                                <img src="{{ asset('public/img/' . $productoR->imagen) }}" alt="">
                                                 <div class="product-label">
-                                                    @if ($producto->idpromocion != '')
+                                                    @if ($productoR->idpromocion != '')
                                                         @foreach ($promociones as $promocion)
-                                                            @if ($producto->idpromocion == $promocion->id)
+                                                            @if ($productoR->idpromocion == $promocion->id)
                                                                 <span class="sale">-{{ $promocion->descuento }}%</span>
                                                                 <?php $descuento = $promocion->descuento / 100; ?>
                                                             @endif
                                                         @endforeach
                                                     @endif
-                                                    @if ($producto->stock == 0)
+                                                    @if ($productoR->stock == 0)
                                                         <span class="new">Sin Stock</span>
                                                     @endif
                                                 </div>
                                             </div>
                                             <div class="product-body">
                                                 @foreach ($categorias as $categoria)
-                                                    @if ($categoria->id == $producto->idcategoria)
+                                                    @if ($categoria->id == $productoR->idcategoria)
                                                         <p class="product-category">{{ $categoria->nombre }}</p>
                                                     @endif
                                                 @endforeach
-                                                <h3 class="product-name"><a href="#">{{ $producto->name }}</a></h3>
-                                                @if ($producto->idpromocion != '')
+                                                <h3 class="product-name"><a href="{{ route('catalogo.show', $productoR->id) }}">{{ $productoR->name }}</a></h3>
+                                                @if ($productoR->idpromocion != '')
                                                     <h4 class="product-price">Bs
-                                                        {{ $producto->precioUnitario - $producto->precioUnitario * $descuento }}
+                                                        {{ $productoR->precioUnitario - $productoR->precioUnitario * $descuento }}
                                                         <del class="product-old-price">Bs
-                                                            {{ $producto->precioUnitario }}</del>
+                                                            {{ $productoR->precioUnitario }}</del>
                                                     </h4>
                                                 @else
-                                                    <h4 class="product-price">Bs {{ $producto->precioUnitario }}
+                                                    <h4 class="product-price">Bs {{ $productoR->precioUnitario }}
                                                     </h4>
                                                 @endif
                                                 <div class="product-rating">
@@ -233,7 +233,7 @@
                                                             class="tooltipp">add to compare</span></button>
                                                     <button class="quick-view"><i class="fa fa-eye"></i><span
                                                             class="tooltipp">
-                                                            <a href="{{ route('catalogo.show', $producto->id) }}"
+                                                            <a href="{{ route('catalogo.show', $productoR->id) }}"
                                                                 style="color: white">
                                                                 quick view</a> </span></button>
                                                     <form action="{{ route('detalleCarrito.store') }}" method="POST"
@@ -241,15 +241,15 @@
                                                         @csrf
                                                         <input type="number" id="cantidad" name="cantidad"
                                                             min="1" max="1000" value="1">
-                                                        @if ($producto->idpromocion != '')
+                                                        @if ($productoR->idpromocion != '')
                                                             <input type="hidden" name="precio" id="precio"
-                                                                value="{{ $producto->precioUnitario - $producto->precioUnitario * $descuento }}">
+                                                                value="{{ $productoR->precioUnitario - $productoR->precioUnitario * $descuento }}">
                                                         @else
                                                             <input type="hidden" name="precio" id="precio"
-                                                                value="{{ $producto->precioUnitario }}">
+                                                                value="{{ $productoR->precioUnitario }}">
                                                         @endif
                                                         <input type="hidden" name="idProducto" id="idProducto"
-                                                            value="{{ $producto->id }}">
+                                                            value="{{ $productoR->id }}">
                                                         @auth
                                                             <input type="hidden" name="idCarrito" id="idCarrito"
                                                                 value="{{ $carrito->id }}">

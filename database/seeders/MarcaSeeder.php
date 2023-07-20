@@ -48,5 +48,11 @@ class MarcaSeeder extends Seeder
         marca::create([
             'nombre' => 'GSK'
         ]);
+        marca::create([
+            'nombre' => 'FARMINDUSTRIA'
+        ]);
+        marca::create([
+            'nombre' => 'SUIPHAR'
+        ]);
     }
 }

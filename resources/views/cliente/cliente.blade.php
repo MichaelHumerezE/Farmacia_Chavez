@@ -376,12 +376,10 @@
                 <div class="row">
                     <div class="col-md-12 text-center">
                         <ul class="footer-payments">
-                            <li><a href="#"><i class="fa fa-cc-visa"></i></a></li>
-                            <li><a href="#"><i class="fa fa-credit-card"></i></a></li>
-                            <li><a href="#"><i class="fa fa-cc-paypal"></i></a></li>
-                            <li><a href="#"><i class="fa fa-cc-mastercard"></i></a></li>
-                            <li><a href="#"><i class="fa fa-cc-discover"></i></a></li>
-                            <li><a href="#"><i class="fa fa-cc-amex"></i></a></li>
+                            <li><a href="{{url('https://www.facebook.com/farmaciaschavezsa/?locale=es_LA')}}"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="{{url('https://www.instagram.com/farmaciaschavez/?hl=es')}}"><i class="fa fa-instagram"></i></a></li>
+                            <li><a href="{{url('https://www.linkedin.com/company/farmaciaschavez/?originalSubdomain=bo')}}"><i class="fa fa-linkedin"></i></a></li>
+                            <li><a href="{{url('https://twitter.com/farmaciaschavez?lang=es')}}"><i class="fa fa-twitter"></i></a></li>
                         </ul>
                         <span class="copyright">
                             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->

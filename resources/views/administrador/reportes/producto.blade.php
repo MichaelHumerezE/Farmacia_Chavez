@@ -31,7 +31,7 @@
                     <td>{{ $producto->name }}</td>
                     <td>{{ $producto->descripcion }}</td>
                     <td>{{ $producto->stock }}</td>
-                    <td>{{ $producto->precioUnitario }}</td>
+                    <td>{{ $producto->precioUnitario }} Bs</td>
                     @foreach ($marcas as $marca)
                         @if ($marca->id == $producto->idmarca)
                             <td>{{ $marca->nombre }}</td>

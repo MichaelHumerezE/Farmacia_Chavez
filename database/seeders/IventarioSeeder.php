@@ -163,5 +163,55 @@ class IventarioSeeder extends Seeder
             'id_producto' => '10',
             'id_sucursal' => '5',
         ]);
+        Iventario::create([
+            'cantidad' => '7',
+            'id_producto' => '11',
+            'id_sucursal' => '5',
+        ]);
+        Iventario::create([
+            'cantidad' => '2',
+            'id_producto' => '11',
+            'id_sucursal' => '4',
+        ]);
+        Iventario::create([
+            'cantidad' => '11',
+            'id_producto' => '11',
+            'id_sucursal' => '3',
+        ]);
+        Iventario::create([
+            'cantidad' => '10',
+            'id_producto' => '11',
+            'id_sucursal' => '1',
+        ]);
+        Iventario::create([
+            'cantidad' => '3',
+            'id_producto' => '12',
+            'id_sucursal' => '1',
+        ]);
+        Iventario::create([
+            'cantidad' => '2',
+            'id_producto' => '12',
+            'id_sucursal' => '2',
+        ]);
+        Iventario::create([
+            'cantidad' => '8',
+            'id_producto' => '12',
+            'id_sucursal' => '3',
+        ]);
+        Iventario::create([
+            'cantidad' => '3',
+            'id_producto' => '12',
+            'id_sucursal' => '4',
+        ]);
+        Iventario::create([
+            'cantidad' => '4',
+            'id_producto' => '12',
+            'id_sucursal' => '5',
+        ]);
+        Iventario::create([
+            'cantidad' => '35',
+            'id_producto' => '13',
+            'id_sucursal' => '2',
+        ]);
     }
 }

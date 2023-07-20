@@ -17,7 +17,7 @@ class ComposicionSeeder extends Seeder
     {
         Composicion::create([
             'nombre' => 'Aciclovir',
-            'gramos' => '0.05',
+            'gramos' => '5',
         ]);
         Composicion::create([
             'nombre' => 'Hidrocortisona',
@@ -41,7 +41,7 @@ class ComposicionSeeder extends Seeder
         ]);
         Composicion::create([
             'nombre' => 'Ketoconazol',
-            'gramos' => '0.05',
+            'gramos' => '2',
         ]);
     }
 }

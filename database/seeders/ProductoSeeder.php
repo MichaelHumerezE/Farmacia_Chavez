@@ -16,7 +16,7 @@ class ProductoSeeder extends Seeder
     public function run()
     {
         producto::create([
-            'name' => 'Aciclovir 0.05 Crema X 5Gr',
+            'name' => 'Aciclovir 5% Crema X 5Gr',
             'descripcion' => '',
             'stock' => '50',
             'precioUnitario' => '17.50',
@@ -25,7 +25,7 @@ class ProductoSeeder extends Seeder
             'idmarca' => '4'
         ]);
         producto::create([
-            'name' => 'Clobetasol 0.05 Crema X 25Gr',
+            'name' => 'Clobetasol 0.05% Crema X 25Gr',
             'descripcion' => '',
             'stock' => '50',
             'precioUnitario' => '18',
@@ -34,7 +34,7 @@ class ProductoSeeder extends Seeder
             'idmarca' => '4'
         ]);
         producto::create([
-            'name' => 'Hidrocortisona 0.1 Generico Crema X 15Gr',
+            'name' => 'Hidrocortisona 1% Generico Crema X 10Gr',
             'descripcion' => '',
             'stock' => '50',
             'precioUnitario' => '18.36',
@@ -54,7 +54,7 @@ class ProductoSeeder extends Seeder
         ]);
 
         producto::create([
-            'name' => 'Virusan Aciclovir 0.05 Crema Dermica X 15Gr',
+            'name' => 'Virusan Aciclovir 5% Crema Dermica X 15Gr',
             'descripcion' => '',
             'stock' => '0',
             'precioUnitario' => '42.85',
@@ -64,7 +64,7 @@ class ProductoSeeder extends Seeder
         ]);
 
         producto::create([
-            'name' => 'Ketoconazol 0.02 Crema Genericox 20Gr',
+            'name' => 'Ketoconazol 2% Crema Genericox 20Gr',
             'descripcion' => '',
             'stock' => '50',
             'precioUnitario' => '18',
@@ -104,11 +104,41 @@ class ProductoSeeder extends Seeder
         ]);
 
         producto::create([
-            'name' => 'Viraxon Aciclovir 0.05 Crema X 5Gr',
+            'name' => 'Viraxon Aciclovir 5% Crema X 5Gr',
             'descripcion' => '',
             'stock' => '50',
             'precioUnitario' => '25.30',
             'imagen' => 'Viraxon_Aciclovir_0.05_Crema_X_5Gr.jpg',
+            'idcategoria' => '3',
+            'idmarca' => '5'
+        ]);
+
+        producto::create([
+            'name' => 'Multiderm Crema X 10Gr',
+            'descripcion' => '',
+            'stock' => '30',
+            'precioUnitario' => '41.00',
+            'imagen' => 'Multiderm_X_10Gr.png',
+            'idcategoria' => '3',
+            'idmarca' => '12'
+        ]);
+
+        producto::create([
+            'name' => 'Hidrotex Hidrocortisona 1% Crema X 30Gr',
+            'descripcion' => '',
+            'stock' => '20',
+            'precioUnitario' => '66.12',
+            'imagen' => 'Hidrotex_Hidrocostisona_X_30Gr.png',
+            'idcategoria' => '3',
+            'idmarca' => '13'
+        ]);
+
+        producto::create([
+            'name' => 'Fungofar Ketoconazol 2% Crema Antimicotico X 20Gr',
+            'descripcion' => '',
+            'stock' => '35',
+            'precioUnitario' => '41.82',
+            'imagen' => 'Fungofar_Ketoconazol_2.png',
             'idcategoria' => '3',
             'idmarca' => '5'
         ]);

@@ -59,7 +59,7 @@
                                 <p class="product-category">{{ $categoria->nombre }}</p>
                             @endif
                         @endforeach
-                        <h3 class="product-name"><a href="#">{{ $producto->name }}</a></h3>
+                        <h3 class="product-name"><a href="{{ route('catalogo.show', $producto->id) }}">{{ $producto->name }}</a></h3>
                         @if ($producto->idpromocion != '')
                             <h4 class="product-price">Bs
                                 {{ $producto->precioUnitario - $producto->precioUnitario * $descuento }}

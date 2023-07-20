@@ -12,6 +12,7 @@ use App\Models\ProductoComposicion;
 use App\Models\Promocion;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Phpml\Classification\KNearestNeighbors;
 
 class CatalogoController extends Controller
 {
@@ -93,6 +94,19 @@ class CatalogoController extends Controller
             return view('cliente.catalogo.product', compact('productos', 'producto', 'categorias', 'marcas', 'promociones', 'carrito', 'detallesCarrito', 'productosRec', 'composiciones'));
         }
         return view('cliente.catalogo.product', compact('productos', 'producto', 'categorias', 'marcas', 'promociones', 'productosRec', 'composiciones'));
+    }
+
+    public function KNN($id)
+    {
+        $productos = Producto::get();
+        $composiciones = Composicion::get();
+
+        $classifier = new KNearestNeighbors();
+        $classifier->train($productos, $composiciones);
+
+        $product = Producto::FindOrFail($id);
+        $classifier->predict($product);
+        return $classifier;
     }
 
     /**

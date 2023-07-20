@@ -63,5 +63,25 @@ class ProductoComposicionSeeder extends Seeder
             'id_producto' => '10',
             'id_composicion' => '1',
         ]);
+        ProductoComposicion::create([
+            'id_producto' => '11',
+            'id_composicion' => '4',
+        ]);
+        ProductoComposicion::create([
+            'id_producto' => '11',
+            'id_composicion' => '5',
+        ]);
+        ProductoComposicion::create([
+            'id_producto' => '11',
+            'id_composicion' => '6',
+        ]);
+        ProductoComposicion::create([
+            'id_producto' => '12',
+            'id_composicion' => '2',
+        ]);
+        ProductoComposicion::create([
+            'id_producto' => '13',
+            'id_composicion' => '7',
+        ]);
     }
 }

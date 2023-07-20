@@ -7,7 +7,6 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-
                     <h4>
                         <h2>
                             <center><b>PRODUCTOS</b></center>
@@ -24,12 +23,15 @@
                             Reporte XLSX <i class="fa fa-file-excel"></i></a>
                     </h4>
                 </div>
+                <div class="pagination justify-content-end">
+                    {!! $productos->links() !!}
+                </div>
                 <table class="table table-bordered table-striped">
                     <thead>
                         <tr>
                             <th>ID</th>
                             <th>Nombre</th>
-                            <th>Descripcion</th>
+                            <th>Imagen</th>
                             <th>Precio</th>
                             <th>Marca</th>
                             <th>Categoria</th>
@@ -41,8 +43,8 @@
                             <tr>
                                 <td>{{ $producto->id }}</td>
                                 <td>{{ $producto->name }}</td>
-                                <td>{{ $producto->descripcion }}</td>
-                                <td>{{ $producto->precioUnitario }}</td>
+                                <td><img src="{{ asset('public/img/' . $producto->imagen) }}" alt="Producto" width="150"></td>
+                                <td>{{ $producto->precioUnitario }} Bs</td>
                                 @foreach ($marcas as $marca)
                                     @if ($marca->id == $producto->idmarca)
                                         <td>{{ $marca->nombre }}</td>
@@ -73,6 +75,9 @@
                         @endforeach
                     </tbody>
                 </table>
+                <div class="pagination justify-content-end">
+                    {!! $productos->links() !!}
+                </div>
             </div>
         </div>
     </div>
